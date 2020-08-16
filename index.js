@@ -1,17 +1,39 @@
-//function
-function sayHello(name, age){
-    console.log(`Hello ${name} you are ${age} years old`);
+//DOM(Document Object Module)
+const title = document.querySelector("#title");
+title.innerHTML="Hi! From JS";
+title.style.color="red";
+document.title = "I own you now";
+
+//Events and event handlers
+function handleResize(){
+    console.log("I have been resized")
 }
 
-const greetNicolas = sayHello("Nicolas", 14)
+window.addEventListener("resize", handleResize); // 윈도우 사이즈가 변경될 때 함수 호출됨
+window.addEventListener("resize", handleResize()); // 즉시 함수 호출됨
 
-console.log(greetNicolas)
+//argument = event
+const title = document.querySelector("#title");
 
-//calculator
-const calculator = {
-    plus: function(a,b){
-        return a+b;
-    }
+function handleResize(event){
+    console.log(event);
 }
-const plus = calculator(5,5)
-console.log(plus)
+window.addEventListener("resize",handleResize);
+
+//click
+const title = document.querySelector("#title");
+
+function handleClick(){
+    title.syle.color = "red";
+}
+
+title.addEventListener("click",handleClick);
+
+//if-else, prompt
+const age = prompt("How old are you?");
+
+if(age>18&&age<21){
+    console.log("you can drink but you should not");
+}else{
+    console.log("you cant");
+}
