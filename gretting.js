@@ -5,10 +5,15 @@ const gretting = document.querySelector("".js-gretting);
 const USER_LS = "currentUser"
 const SHOWINT_CN= "showing"
 
+function saveName(text){
+    localStorage.setItem(USER_LS,text);
+}
+
 function handleSubmit(event){
     event.preventDefault();
     const currentValue = input.value;
     paintGreeting(currentValue);
+    saveName(currentValue);
 }
 
 function askForName(){
@@ -36,3 +41,4 @@ function init(){
 }
 
 init();
+//일단 미룰까.. 어떻게 해야하지
